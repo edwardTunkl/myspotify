@@ -2,8 +2,8 @@ import React, { Component } from "react";
 import { Link, withRouter } from "react-router-dom";
 import { Navbar, Nav, Button, Form, FormControl } from "react-bootstrap";
 
-const MyNavbar = ({location}) => {
-  
+class MyNavbar extends Component {
+  render(){
     return (
       <Navbar bg="dark" expand="lg">
         <Navbar.Brand href="#" className="text-success">
@@ -19,7 +19,7 @@ const MyNavbar = ({location}) => {
             <Link to="/">
               <div
                 className={
-                  location.pathname === "/" ? "nav-link active" : "nav-link"
+                  this.props.location.pathname === "/" ? "nav-link active" : "nav-link"
                 }
               >
                 Home
@@ -28,7 +28,7 @@ const MyNavbar = ({location}) => {
             <Link to="/album">
               <div
                 className={
-                  location.pathname === "/album"
+                  this.props.location.pathname === "/album"
                     ? "nav-link active"
                     : "nav-link"
                 }
@@ -39,7 +39,7 @@ const MyNavbar = ({location}) => {
             <Link to="/artist">
               <div
                 className={
-                  location.pathname === "/artist"
+                  this.props.location.pathname === "/artist"
                     ? "nav-link active"
                     : "nav-link"
                 }
@@ -66,5 +66,5 @@ const MyNavbar = ({location}) => {
       </Navbar>
     );
   }
-
+}
 export default withRouter(MyNavbar);

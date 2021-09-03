@@ -5,6 +5,7 @@ import './App.css';
 import MyNavbar from "./Components/MyNavbar";
 import Home from "./Components/Home";
 import Album from "./Components/Album";
+import Artist from "./Components/Artist";
 
 class App extends Component {
  
@@ -23,6 +24,7 @@ class App extends Component {
           <MyNavbar onChange={this.onChange}/>         
           <Route path="/" exact render={(routerProps) => <Home {...routerProps} search={this.state.query} />} />
           <Route path="/album/:id" render={(routerProps) => <Album {...routerProps} />} />
+          <Route path="/artist/:id" render={(routerProps) => <Artist {...routerProps} />} />
 
         </Router>
       </div>
